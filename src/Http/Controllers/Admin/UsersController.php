@@ -2,6 +2,7 @@
 
 namespace Mekaeil\LaravelUserManagement\Http\Controllers\Admin;
 
+use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Mekaeil\LaravelUserManagement\Repository\Contracts\PermissionRepositoryInterface;
@@ -21,20 +22,21 @@ class UsersController extends Controller
 
     public function __construct(
         UserRepositoryInterface $user,
+        UserRepository $user_repository,
         PermissionRepositoryInterface $permission,
         RoleRepositoryInterface $role,
         DepartmentRepository $department)
     {
         $this->permissionRepository = $permission;
         $this->roleRepository       = $role;
-        $this->userRepository       = $user;
+        $this->userRepository       = $user_repository;
         $this->departmentRepository = $department;
     }
 
     public function index()
     {
         // $users          = $this->userRepository->all();
-        $users          = $this->userRepository->allWithTrashed();
+        $users = $this->userRepository->index();
 
         return view('user-management.user.index', compact('users'));
     }
