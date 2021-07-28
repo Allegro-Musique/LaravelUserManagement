@@ -3,6 +3,8 @@
 namespace Mekaeil\LaravelUserManagement\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
 
 class UpdateUser extends FormRequest
 {
@@ -35,5 +37,10 @@ class UpdateUser extends FormRequest
             'roles'         => 'nullable|array',
             'roles.*'       => 'nullable|exists:'. $tableNames['roles']. ',id'
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json($validator->errors(), 422));
     }
 }
