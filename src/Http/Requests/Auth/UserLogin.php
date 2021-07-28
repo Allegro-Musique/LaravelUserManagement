@@ -3,6 +3,8 @@
 namespace Mekaeil\LaravelUserManagement\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
 
 class UserLogin extends FormRequest
 {
@@ -26,8 +28,13 @@ class UserLogin extends FormRequest
         $username = config('laravel_user_management.auth.username');
 
         return [
-            "$username"     => "required" . ($username == 'mobile' ? '|numeric' : '|email'),
+            "email"     => "required|email",
             'password'      => 'required',
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json($validator->errors(), 422));
     }
 }

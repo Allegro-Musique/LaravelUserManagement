@@ -12,7 +12,7 @@
         'namespace'     => 'App\Http\Controllers\UserManagement',
         'prefix'        => 'admin/user-management',
         'as'            => 'admin.user_management.',
-        'middleware'    => ['web', 'api']
+        'middleware'    => ['web', 'auth']
     ], 
     function () {
 
