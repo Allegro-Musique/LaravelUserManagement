@@ -48,19 +48,19 @@
                             <input type="text" name="last_name" value="{{ $user->last_name  }}" class="form-control" id="last_name" placeholder="Last Name like: Andisheh">
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label for="guard_name">Departments</label>
-                            <select multiple class="form-control" name="departments[]" id="guard_name">
-                                <option></option>
-                                @forelse ($departments as $item)
-                                    <option value="{{ $item->id }}" {{ in_array($item->id, $userHasDepartments) ? 'selected' : '' }}>{{ $item->title }}</option>
-                                @empty
-                                    
-                                @endforelse
-                            </select>
-                        </div>
-                    </div>
+{{--                    <div class="col-4">--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label for="guard_name">Departments</label>--}}
+{{--                            <select multiple class="form-control" name="departments[]" id="guard_name">--}}
+{{--                                <option></option>--}}
+{{--                                @forelse ($departments as $item)--}}
+{{--                                    <option value="{{ $item->id }}" {{ in_array($item->id, $userHasDepartments) ? 'selected' : '' }}>{{ $item->title }}</option>--}}
+{{--                                @empty--}}
+{{--                                    --}}
+{{--                                @endforelse--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
                 <div class="row">
                     <div class="col-4">
@@ -71,20 +71,20 @@
                     </div>
                     <div class="col-4">
                         <div class="form-group">
-                            <label for="mobile">Mobile</label>
-                            <input type="text" name="mobile" value="{{ $user->mobile }}" class="form-control" id="mobile" placeholder="Mobile number like: 091xxxxxxxx">
+                            <label for="mobile">Téléphone</label>
+                            <input type="text" name="phone" value="{{ $user->phone }}" class="form-control" id="phone" placeholder="Mobile number like: 091xxxxxxxx">
                         </div>
                     </div>
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label for="status">status</label>
-                            <select class="form-control" name="status" id="status">
-                                <option value="pending" {{ $user->status == 'pending' ? 'selected' : ''  }}>pending</option>
-                                <option value="accepted" {{ $user->status == 'accepted' ? 'selected' : ''  }}>accepted</option>
-                                <option value="blocked" {{ $user->status == 'blocked' ? 'selected' : '' }}>blocked</option>
-                            </select>
-                        </div>
-                    </div>
+{{--                    <div class="col-4">--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label for="status">status</label>--}}
+{{--                            <select class="form-control" name="status" id="status">--}}
+{{--                                <option value="pending" {{ $user->status == 'pending' ? 'selected' : ''  }}>pending</option>--}}
+{{--                                <option value="accepted" {{ $user->status == 'accepted' ? 'selected' : ''  }}>accepted</option>--}}
+{{--                                <option value="blocked" {{ $user->status == 'blocked' ? 'selected' : '' }}>blocked</option>--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

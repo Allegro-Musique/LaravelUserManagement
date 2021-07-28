@@ -32,7 +32,7 @@ class UpdateUser extends FormRequest
             'first_name'    => 'required|string',
             'last_name'     => 'required|string',
             'email'         => "nullable|email|unique:$userTable,email," . $this->ID,
-            'phone'        => "required|unique:$userTable," . $this->ID,
+            'phone'         => "nullable|unique:$userTable," . $this->ID,
             'password'      => 'nullable|min:6',
             'roles'         => 'nullable|array',
             'roles.*'       => 'nullable|exists:'. $tableNames['roles']. ',id'
