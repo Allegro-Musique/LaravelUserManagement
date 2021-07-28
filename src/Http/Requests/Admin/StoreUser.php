@@ -36,4 +36,9 @@ class StoreUser extends FormRequest
             'roles.*'       => 'nullable|exists:'. $tableNames['roles']. ',name',
         ];
     }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new HttpResponseException(response()->json($validator->errors(), 422));
+    }
 }
