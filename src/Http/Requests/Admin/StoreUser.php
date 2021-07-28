@@ -3,6 +3,8 @@
 namespace Mekaeil\LaravelUserManagement\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Contracts\Validation\Validator;
 
 class StoreUser extends FormRequest
 {
@@ -33,7 +35,7 @@ class StoreUser extends FormRequest
             'phone'        => "required|unique:$userTable",
             'password'      => 'required|min:6',
             'roles'         => 'nullable|array',
-            'roles.*'       => 'nullable|exists:'. $tableNames['roles']. ',name',
+            'roles.*'       => 'nullable|exists:'. $tableNames['roles']. ',id',
         ];
     }
 
