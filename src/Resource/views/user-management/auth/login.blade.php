@@ -10,7 +10,7 @@
     <h4>{{ __('trans.get_start') }}</h4>
     <h6 class="font-weight-light">{{ __('trans.sign_in_to_continue') }}</h6>
 
-    <form class="pt-3" action="{{ route('auth.user.login') }}" method="post">
+    <form class="pt-3" action="{{ route('auth.user.auth-login') }}" method="post">
         {{ csrf_field() }}
         
         <div class="form-group">
