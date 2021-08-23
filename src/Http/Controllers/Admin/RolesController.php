@@ -56,9 +56,7 @@ class RolesController extends Controller
     {
         $role = $this->roleRepository->store([
             'name'          => $request->name,
-            'title'         => $request->title,
-            'guard_name'    => $request->guard_name,
-            'description'   => $request->description,
+            'guard_name'    => $request->guard_name
         ]);
         
         if(! empty($request->permissions))
@@ -79,9 +77,7 @@ class RolesController extends Controller
         {
             $this->roleRepository->update($ID,[
                 'name'          => $request->name,
-                'title'         => $request->title,
-                'guard_name'    => $request->guard_name,
-                'description'   => $request->description,
+                'guard_name'    => $request->guard_name
             ]);
 
             $permissions = $request->permissions ?? [];

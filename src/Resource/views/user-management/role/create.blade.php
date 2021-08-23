@@ -42,22 +42,13 @@
                         </div>
                         <div class="col-4">
                             <div class="form-group">
-                                <label for="title">Title</label>
-                                <input type="text" name="title" class="form-control" id="title" placeholder="Title like: Admin Manager">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
                                 <label for="guard_name">guard name</label>
                                 <select class="form-control" name="guard_name" id="guard_name">
+                                    <option value="api" selected>API</option>
                                     <option value="web" selected>web</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control" name="description" id="description" rows="4"></textarea>
                     </div>
                 </div>
             </div>
