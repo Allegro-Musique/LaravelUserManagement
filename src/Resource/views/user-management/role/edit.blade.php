@@ -43,22 +43,12 @@
                         </div>
                         <div class="col-4">
                             <div class="form-group">
-                                <label for="title">Title</label>
-                                <input type="text" name="title" class="form-control" id="title" value="{{ $role->title }}">
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group">
                                 <label for="guard_name">guard name</label>
                                 <select class="form-control" name="guard_name" id="guard_name">
-                                    <option value="web" selected>web</option>
+                                    <option value="api" selected>api</option>
                                 </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control" name="description" id="description" rows="4">{{ $role->description }}</textarea>
                     </div>
                 </div>
             </div>
@@ -74,8 +64,8 @@
                                 @forelse ($permissions as $item)                                
                                     <div class="form-check">
                                         <label class="form-check-label">
-                                            <input type="checkbox" name="permissions[]" value="{{ $item->name }}" {{ in_array($item->id,$roleHasPermissions) ? 'checked' : '' }} class="form-check-input">
-                                            {{ $item->title . ($item->description ? "  [ " . $item->description . " ]" : "")}}
+                                            <input type="checkbox" name="permissions[]" value="{{ $item->id }}" {{ in_array($item->id,$roleHasPermissions) ? 'checked' : '' }} class="form-check-input">
+                                            {{ $item->name}}
                                             <i class="input-helper"></i>
                                         </label>
                                     </div>

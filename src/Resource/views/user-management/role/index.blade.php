@@ -42,13 +42,7 @@
                                     Role Name
                                 </th>
                                 <th>
-                                    Title
-                                </th>
-                                <th>
                                     guard name
-                                </th>
-                                <th>
-                                    description
                                 </th>
                                 <th>
                                     Actions
@@ -65,13 +59,7 @@
                                         {{ $item->name }}
                                     </td>
                                     <td>
-                                        {{ $item->title }}
-                                    </td>
-                                    <td>
                                         {{ $item->guard_name }}
-                                    </td>
-                                    <td>
-                                        {{ $item->description }}
                                     </td>
                                     <td>
                                         <a href="{{ route('admin.user_management.role.edit', $item->id) }}" class="btn btn-outline-dark btn-sm">Edit</a>

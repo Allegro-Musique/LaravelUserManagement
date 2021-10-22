@@ -27,10 +27,7 @@ class StorePermission extends FormRequest
         
         return [
             'name'          => 'required|unique:'. $tableNames['permissions'],
-            'title'         => 'required|string',
-            'module'        => 'nullable',
             'guard_name'    => 'nullable',
-            'description'   => 'nullable',
         ];
     }
 }

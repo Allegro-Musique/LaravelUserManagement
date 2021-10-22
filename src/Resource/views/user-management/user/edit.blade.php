@@ -75,16 +75,6 @@
                             <input type="text" name="phone" value="{{ $user->phone }}" class="form-control" id="phone" placeholder="Mobile number like: 091xxxxxxxx">
                         </div>
                     </div>
-{{--                    <div class="col-4">--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="status">status</label>--}}
-{{--                            <select class="form-control" name="status" id="status">--}}
-{{--                                <option value="pending" {{ $user->status == 'pending' ? 'selected' : ''  }}>pending</option>--}}
-{{--                                <option value="accepted" {{ $user->status == 'accepted' ? 'selected' : ''  }}>accepted</option>--}}
-{{--                                <option value="blocked" {{ $user->status == 'blocked' ? 'selected' : '' }}>blocked</option>--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </div>

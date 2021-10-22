@@ -41,13 +41,7 @@
                                     Permission Name
                                 </th>
                                 <th>
-                                    Title
-                                </th>
-                                <th>
                                     Guard name
-                                </th>
-                                <th>
-                                    description
                                 </th>
                                 <th>
                                     Action
@@ -64,13 +58,7 @@
                                         {{ $item->name }}
                                     </td>
                                     <td>
-                                        {{ $item->title ??'--'  }}
-                                    </td>
-                                    <td>
                                         {{ $item->guard_name }}
-                                    </td>
-                                    <td>
-                                        {{ $item->description }}
                                     </td>
                                     <td>
                                         <a href="{{ route('admin.user_management.permission.edit', $item->id) }}" class="btn btn-outline-dark btn-sm">Edit</a>

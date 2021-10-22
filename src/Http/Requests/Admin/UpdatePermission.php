@@ -27,10 +27,7 @@ class UpdatePermission extends FormRequest
 
         return [
             'name'          => 'required|unique:'. $tableNames['permissions'] .',name,' . $this->ID,
-            'title'         => 'required|string',
-            'module'        => 'nullable',
             'guard_name'    => 'nullable',
-            'description'   => 'nullable',
         ];
     }
 }

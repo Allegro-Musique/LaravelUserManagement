@@ -42,20 +42,8 @@
                             <input type="text" name="name" class="form-control" id="name" value="{{ $permission->name }}">
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" name="title" class="form-control" id="title" value="{{ $permission->title }}">
-                        </div>
-                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="module">Module name</label>
-                            <input type="text" class="form-control" name="module" id="module" value="{{ $permission->module }}">
-                        </div>
-                    </div>
                     <div class="col-6">
                         <div class="form-group">
                             <label for="guard_name">guard name</label>
@@ -64,10 +52,6 @@
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea class="form-control" name="description" id="description" rows="4">{{ $permission->description }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
                 <a href="{{ route('admin.user_management.permission.index') }}" class="btn btn-light">Cancel</a>

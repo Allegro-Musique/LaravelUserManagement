@@ -27,11 +27,9 @@ class UpdateRole extends FormRequest
         
         return [
             'name'          => "required|unique:".$tableNames['roles'].",name," . $this->ID,
-            'title'         => 'required|string',
             'guard_name'    => 'nullable',
-            'description'   => 'nullable',
             'permissions'   => 'nullable|array',
-            'permissions.*' => 'nullable|exists:'. $tableNames['permissions']. ',name',
+            'permissions.*' => 'nullable|exists:'. $tableNames['permissions']. ',id',
         ];
     }
 }
