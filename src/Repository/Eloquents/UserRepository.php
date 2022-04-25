@@ -22,7 +22,7 @@ class UserRepository extends BaseEloquentRepository implements UserRepositoryInt
 
         })
             ->orderBy('created_at','DESC')
-            ->paginate();
+            ->paginate(100);
 
     }
 
